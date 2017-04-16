@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>BAOCF Annual Picnic 2006</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<p>&nbsp;</p>
+<table width="80%" border="0" align="center" cellspacing="2">
+  <tr><td><div align="center"> 
+        <script language="JavaScript1.2">
+
+/***********************************************
+* Flexi Slideshow- © Dynamic Drive (www.dynamicdrive.com)
+* This notice must stay intact for use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var variableslide=new Array()
+
+//variableslide[x]=["path to image", "OPTIONAL link for image", "OPTIONAL text description (supports HTML tags)"]
+
+variableslide[0]=['/banners/G&G.jpg', '', '']
+variableslide[1]=['/banners/Marshall.jpg','','']
+variableslide[2]=['/banners/Midas.jpg', '', '']
+variableslide[3]=['/banners/unique.jpg', '', '']
+variableslide[4]=['/banners/realtors.jpg', '', '']
+variableslide[5]=['/banners/Dennis.jpg', '', '']
+
+//configure the below 3 variables to set the dimension/background color of the slideshow
+
+var slidewidth='468px' //set to width of LARGEST image in your slideshow
+var slideheight='60px' //set to height of LARGEST iamge in your slideshow, plus any text description
+var slidebgcolor='#F3F3F3'
+
+//configure the below variable to determine the delay between image rotations (in miliseconds)
+var slidedelay=9000
+
+////Do not edit pass this line////////////////
+
+var ie=document.all
+var dom=document.getElementById
+
+for (i=0;i<variableslide.length;i++){
+var cacheimage=new Image()
+cacheimage.src=variableslide[i][0]
+}
+
+var currentslide=0
+
+function rotateimages(){
+contentcontainer='<center>'
+if (variableslide[currentslide][1]!="")
+contentcontainer+='<a href="'+variableslide[currentslide][1]+'">'
+contentcontainer+='<img src="'+variableslide[currentslide][0]+'" border="0" vspace="3">'
+if (variableslide[currentslide][1]!="")
+contentcontainer+='</a>'
+contentcontainer+='</center>'
+if (variableslide[currentslide][2]!="")
+contentcontainer+=variableslide[currentslide][2]
+
+if (document.layers){
+crossrotateobj.document.write(contentcontainer)
+crossrotateobj.document.close()
+}
+else if (ie||dom)
+crossrotateobj.innerHTML=contentcontainer
+if (currentslide==variableslide.length-1) currentslide=0
+else currentslide++
+setTimeout("rotateimages()",slidedelay)
+}
+
+if (ie||dom)
+document.write('<div id="slidedom" style="width:'+slidewidth+';height:'+slideheight+'; background-color:'+slidebgcolor+'"></div>')
+
+function start_slider(){
+crossrotateobj=dom? document.getElementById("slidedom") : ie? document.all.slidedom : document.slidensmain.document.slidenssub
+if (document.layers)
+document.slidensmain.visibility="show"
+rotateimages()
+}
+
+if (ie||dom)
+start_slider()
+else if (document.layers)
+window.onload=start_slider
+
+</script>
+      </div></td></tr>
+    <td bgcolor="#FFFF00">
+      <div align="center"><font color="#0000FF" size="4" face="Arial, Helvetica, sans-serif"><strong>BAOCF ANNUAL PICNIC 2006</strong></font></div></td>
+  </tr>
+  <tr>
+    <td><div align="left"><font size="3" face="Arial, Helvetica, sans-serif">The Barbados Association of Central Florida invites you to their Annual Picnic on Saturday September 16th, 2006 in Barnett Park Pavillion #4. Ticket prices are $10 for adults and $5.00 for children 10 years and under. There will be live music, games, food and drinks for all. The festivities will last from 12pm to 6pm. Be there to enjoy good times with fellow Bajans and west indians. Look below for directions to Barnett Park. Hope to see you there. </font></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><img src="MISC%20images/map.web.mapquest.com.gif" width="935" height="713"></div></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
