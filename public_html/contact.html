@@ -10,6 +10,18 @@
     <script type="text/javascript" src="new site/js/jquery.min.js"></script>
     <script type="text/javascript" src="new site/js/image_slide.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    
+    <!-- This script controls the visibility of submit button by captcha validation -->
+    <script>
+    function recaptchaCallback() {
+        var btnSubmit = document.getElementById("btnSubmit");
+
+        if ( btnSubmit.classList.contains("hidden") ) {
+            btnSubmit.classList.remove("hidden");
+            btnSubmitclassList.add("show");
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -86,6 +98,7 @@
                 <div class="content_item">
                     <h2>Contact Us</h2>
                     <p>Please fill out the form below for contact as soon as possible:</p>
+                    <center>
                     <div style="width:120px; float:left;">
                         <p>Name</p>
                     </div>
@@ -111,15 +124,20 @@
                         </p>
                     </div>
                     <br style="clear:both;" />
-                    <center>
+                    
+                    <div class="g-recaptcha" data-sitekey="6LfMmR0UAAAAACGTYJPpo9Uh0f-RpM48Vi3mZ1" data-callback="recaptchaCallback"></div>
+                        <button type="submit" class="btn btn-default hidden" id="btnSubmit">Submit</button>
+                    </center>
+                    <!--
                     <div style="width:220px">
-                        <p><div class="g-recaptcha" data-sitekey="6LfMmR0UAAAAACGTYJPpo9Uh0fgi-RpM48Vi3mZ1"></div></p>
+                        <p> <div class="g-recaptcha" data-sitekey="6LfMmR0UAAAAACGTYJPpo9Uh0f-RpM48Vi3mZ1"></div>
                     </div>
                     </center>
                     <div style="width:430px; float:right;">
                         <p style="padding-top: 15px">
                             <input class="submit" type="submit" name="contact_submitted" value="Send" />
                         </p>
+                        -->
                     </div>
                 </div>
                 <!--close content_item-->
