@@ -18,7 +18,7 @@
  -->
  <?php
 if(isset($_POST["send"])) {
-    $recipient = "info@cfbajans.com";
+    $recipient = "adina54@aol.com";
     $subject = "Feedback from my site";
     $sender = $_POST["sender"];
     $senderEmail = $_POST["senderEmail"];
