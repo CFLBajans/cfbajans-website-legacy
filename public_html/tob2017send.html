@@ -58,7 +58,7 @@
                 <div class="sidebar">
                     <div class="sidebar_item">
                         <h2><strong>Latest Update</strong></h2>
-                        <h3><strong>Next monthly meeting is on May 19th, 2017 at 7pm. </strong></h3>
+                        <h3><strong>Next monthly meeting is on April 22nd, 2017 at 7pm. </strong></h3>
                     </div>
                     <!--close sidebar_item-->
                 </div>
@@ -81,11 +81,16 @@
             <!--close sidebar_container-->
             <div id="content"><center>
                 <div class="content_item">
-                    <h2>Taste of Barbados 2017 Pictures</h2>
-                    <p><strong>No pictures of the event are available.</strong></p>
-                </div>
+                    <h2>Share your Taste of Barbados 2017 pictures with us!</h2>
+                    <form action="/upload-tob.php" enctype="multipart/form-data" method="post">
+                        <input type="file" name="fileToUpload[]" id="fileToUpload" accept="image/*" multiple="">
+                        <input type="submit" value="Upload Image(s)" name="submit">
+                    </form>
+
+                    <p><strong>Note:</strong> Files should not exceed 500KB. <br>     Only .jpg, .JPG, .jpeg, .JPEG, .png, .PNG, .gif and .GIF files are allowed.</p>                    
+                    </center></div>
                 <!--close content_item-->
-            </center></div>
+            </div>
             <!--close content-->
         </div>
         <!--close site_content-->
@@ -99,7 +104,6 @@
 
     </div>
     <!--close main-->
-
     <div id="footer">The Coalition for the Barbados Association of Central Florida is a non profit organization 501(c)3</div><!--close footer-->  
 
 </body>
