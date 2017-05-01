@@ -39,7 +39,6 @@
                 <li><a href="events.html">Events</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            
         </div>
         <!--close menubar-->
         <div id="site_content">
@@ -71,9 +70,9 @@
                         <h3><strong>Email: <a href="mailto:info@cfbajans.com">info@cfbajans.com</a></strong>
                             <a href="mailto:info@cfbajans.com"></a>
                         </h3>
-                        <br>
+                        <p>&nbsp;</p>
                         <div class="fb-like-box" data-href="https://www.facebook.com/cflbajans" data-width="200" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-                        <br>
+                        <p></p>
                     </div>
                     <!--close sidebar_item-->
                 </div>
@@ -82,32 +81,15 @@
             <!--close sidebar_container-->
             <div id="content"><center>
                 <div class="content_item">
-                    <h2>Taste of Barbados 2017</h2>
-                    <p><img src="Taste Promo.jpg" width="625" height="417" alt="CBAOCF Taste of Barbados 2017"/></p>
-                    <form action="tob2017pics"><input type="button" value="View pics of this event!" onclick="window.location.href='tob2017pics.html';" /></form>
-                    <form action="tob2017send"><input type="button" value="Send us your pics of this event!" onclick="window.location.href='tob2017send.html';" /></form>
-                    <br>
-                    <!-- <form action="tob2017send"><input type="button" value="Share your pics of the events with us!" onclick="window.location.href='tob2017send.html';"/></form> -->
-                    <form method="post" action="contact.php">
-                    <br><br>
-                    <p>We'll love to hear what you thought about the event! <br> What did you like, what do you think we could have done better?</p>
-                    
-                    <div style="width:430px;">
-                        <p>
-                            <textarea class="contact textarea" rows="8" cols="50" name="message">Please type your feedback here.</textarea>
-                        </p>
-                    </div>
-                    <br style="clear:both;">
-                    <!-- <button type="button" onclick="alert('Thank you for your feedback!')">Send feedback!</button> -->
-                    <input type="submit" name="send" value="Send feedback!">
-                    <br>
-                    <div style="width:220px">
-                        <p><div class="g-recaptcha" data-sitekey="6LfMmR0UAAAAACGTYJPpo9Uh0fgi-RpM48Vi3mZ1"></div></p>
-                    </div>  
-                    </form>   
-                </div>
-            </center>
-            <!--close content_item-->
+                    <h2>Share your Taste of Barbados 2017 pictures with us!</h2>
+                    <form action="/upload-tob.php" enctype="multipart/form-data" method="post">
+                        <input type="file" name="fileToUpload[]" id="fileToUpload" accept="image/*" multiple="">
+                        <input type="submit" value="Upload Image(s)" name="submit">
+                    </form>
+
+                    <p><strong>Note:</strong> Files should not exceed 500KB. <br>     Only .jpg, .JPG, .jpeg, .JPEG, .png, .PNG, .gif and .GIF files are allowed.</p>                    
+                    </center></div>
+                <!--close content_item-->
             </div>
             <!--close content-->
         </div>
@@ -123,5 +105,6 @@
     </div>
     <!--close main-->
     <div id="footer">The Coalition for the Barbados Association of Central Florida is a non profit organization 501(c)3</div><!--close footer-->  
+
 </body>
 </html>

@@ -19,7 +19,7 @@
  <?php
 if(isset($_POST["send"])) {
     $recipient = "adina54@aol.com";
-    $subject = "Feedback from my site";
+    $subject = "Feedback from Taste of Barbados 2017 event.";
     $sender = $_POST["sender"];
     $senderEmail = $_POST["senderEmail"];
     $message = $_POST["message"];
