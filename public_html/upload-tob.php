@@ -18,10 +18,11 @@
  -->
 <?php
 $target_dir = "images/tob2017/";
+$recipient = "k_whitehall@yahoo.com";
+$mailBody = "";
 
 if(isset($_POST["submit"])) {
     $num_files = count($_FILES['fileToUpload']['tmp_name']);
-    echo $num_files;
     
     for($i=0; $i < $num_files; $i++){
        $tmp_fname = $_FILES["fileToUpload"]["tmp_name"][$i];
@@ -31,14 +32,10 @@ if(isset($_POST["submit"])) {
        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
        $check = getimagesize($tmp_fname);
-       echo $tmp_fname;
-       echo $_FILES["fileToUpload"]["tmp_name"][$i];
        // Check if image file is a actual image or fake image
        if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".<br>";
             $uploadOk = 1;
         } else {
-            echo "$tmp_fname is not an image.<br>";
             $uploadOk = 0;
         }
         // Check if file already exists
@@ -63,15 +60,17 @@ if(isset($_POST["submit"])) {
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($tmp_fname, $target_file)) {
-                echo "The file ". basename( $fname). " has been uploaded.<br>";
+                $fileStatus = "The file ". basename( $fname). " has been uploaded.<br>";
+                echo $fileStatus;
             } else {
-                echo "Sorry, there was an error uploading $fname.<br>";
+                $fileStatus = "Sorry, there was an error uploading $fname.<br>";
+                echo $fileStatus;
             }
         }
-
+        $mailBody = $mailBody . $fileStatus;
     } //for each file
     
 }
-
+mail($recipient, "Images for TOB 2017", $mailBody);
 
 ?>
